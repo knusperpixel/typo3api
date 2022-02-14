@@ -35,7 +35,7 @@ class Double2Field extends AbstractField
                 /**
                  * @phpstan-ignore-next-line
                  */
-                $digits = max(strlen(abs((int)$options['min'])), strlen(abs((int)$options['max']))) + $decimals;
+                $digits = max(strlen((string)abs((int)$options['min'])), strlen((string)abs((int)$options['max']))) + $decimals;
 
                 if ($options['min'] < 0.0) {
                     return "NUMERIC($digits, $decimals) DEFAULT '$default' NOT NULL";
